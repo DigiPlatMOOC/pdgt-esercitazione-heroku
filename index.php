@@ -17,7 +17,7 @@ $content = file_get_contents("php://input");
 //il bot invia mess, viene decodificato e scompattato
 
 //meglio non chiudere perche php stampa tutto
-	$chat_id = $message->chat_id;
+	$chat_id = $message->chat->id;
 	//$token = "qui si metterebbe il token telegram ma non è sicuro";
 	//il runtime ci da il codice token, lo otteniamo da fuori, getenv sono variabili che eseguono il nostro codice
 	$token = getenv("BOTTOKEN");
