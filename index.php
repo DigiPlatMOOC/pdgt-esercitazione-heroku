@@ -26,8 +26,8 @@ $content = file_get_contents("php://input");
 //stringa convertita per inserire nell'url per essere compattibile
 
 $handle = curl_init($url);
-curl_setopt($handle, CURLTOP_RETURNTRANSFER, true);
-curl_setopt($handle, CURLTOP_POST, true);
+curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($handle, CURLOPT_POST, true);
 $response = curl_exec($handle);
 
 error_log("sendMessage: " . $response);
