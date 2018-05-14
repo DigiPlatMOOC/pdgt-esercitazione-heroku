@@ -11,8 +11,23 @@ $content = file_get_contents("php://input");
 	
 	$message_id = $message->message_id;
 	$text = $message->text;
+	
 	                        //graffe, dollaro e variabile, variabili php dentro stringa
 	error_log("Message ID {$message_id}: {$text}\n");  //usa php per logare errori di sistema
 //il bot invia mess, viene decodificato e scompattato
 
 //meglio non chiudere perche php stampa tutto
+	$chat_id = $message->chat_id;
+	//$token = "qui si metterebbe il token telegram ma non è sicuro";
+	//il runtime ci da il codice token, lo otteniamo da fuori, getenv sono variabili che eseguono il nostro codice
+	$token = getenv("BOTTOKEN");
+	
+	$url "https://api.telegram.org/bot{$token}/sendMessage? chat_id={$chat_id}&text=" . urlencode("Hola mi hai scritto: {$text}");
+//stringa convertita per inserire nell'url per essere compattibile
+
+$handle = curl_init($url);
+curl_setopt($handle, CURLTOP_RETURNTRANSFER, true);
+curl_setopt($handle, CURLTOP_POST, true);
+$response = curl_exec($handle);
+
+error_log("sendMessage: " . $response);
