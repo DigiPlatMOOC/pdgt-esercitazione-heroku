@@ -25,6 +25,8 @@ $content = file_get_contents("php://input");
 	$url = "https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text=" . urlencode("Hola mi hai scritto: {$text}");
 //stringa convertita per inserire nell'url per essere compattibile
 
+error_log("URL: " . $url);
+
 $handle = curl_init($url);
 curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($handle, CURLOPT_POST, true);
