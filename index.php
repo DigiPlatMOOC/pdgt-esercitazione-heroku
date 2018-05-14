@@ -7,7 +7,7 @@ $content = file_get_contents("php://input");
 	
 	$update = json_decode($content, false);//si ottiene oggetto php
 	
-	$message = $update->messagge;//update è tutto il blocco, message il pezzo
+	$message = $update->message;//update è tutto il blocco, message il pezzo
 	
 	$message_id = $message->message_id;
 	$text = $message->text;
