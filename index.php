@@ -12,7 +12,7 @@ $content = file_get_contents("php://input");
 	$message_id = $message->message_id;
 	$text = $message->text;
 	                        //graffe, dollaro e variabile, variabili php dentro stringa
-	error_log("Message ID {$message_id}: {$text}\n")  //usa php per logare errori di sistema
+	error_log("Message ID {$message_id}: {$text}\n");  //usa php per logare errori di sistema
 //il bot invia mess, viene decodificato e scompattato
 
 //meglio non chiudere perche php stampa tutto
