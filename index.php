@@ -22,7 +22,7 @@ $content = file_get_contents("php://input");
 	//il runtime ci da il codice token, lo otteniamo da fuori, getenv sono variabili che eseguono il nostro codice
 	$token = getenv("BOTTOKEN");
 	
-	$url = "https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text=" . urlencode("Hola mi hai scritto: {$text}");
+	$url = "https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text=" . urlencode("Hola  oggi mi hai scritto: {$text}");
 //stringa convertita per inserire nell'url per essere compattibile
 
 error_log("URL: " . $url);
